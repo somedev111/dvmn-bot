@@ -16,6 +16,8 @@ headers = {"Authorization": dvmn_token}
 
 url = "https://dvmn.org/api/long_polling/"
 
+print('Бот запущен.')
+
 while True:
     try:
         payload = {}
