@@ -1,6 +1,7 @@
 import requests
 import os
 import textwrap
+import logging
 from time import sleep
 
 import telegram
@@ -16,7 +17,7 @@ headers = {"Authorization": dvmn_token}
 
 url = "https://dvmn.org/api/long_polling/"
 
-print('Бот запущен.')
+logging.info('Бот запущен.')
 
 while True:
     try:
@@ -56,6 +57,6 @@ while True:
     except requests.exceptions.ReadTimeout:
         continue
     except requests.exceptions.ConnectionError:
-        print('ConnectionError')
+        logging.critical('ConnectionError')
         sleep(7200)
         continue
